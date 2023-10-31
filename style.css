@@ -137,3 +137,36 @@ footer{
     padding: 1em;
     margin-top: auto;
 }
+
+/********************************
+*TABELLA
+********************************/
+table{
+    margin: auto;
+    width: 80%;
+}
+
+tr th, tr td{
+    padding-left:0.2em;
+    padding-right: 0.2em;
+    text-align: left;
+}
+
+table thead{
+    background: var(--flagColor);
+}
+
+tr:nth-child(odd){
+   background-color: rgba(218, 125, 12, 0.5);
+   
+}
+
+tr:nth-child(even){
+    background-color:rgba(218, 125, 12, 0.9);
+}
+
+
+/*fa tutta la data in grassetto non solo il giorno */
+tbody tr th time span{
+    font-weight: bold;
+}
