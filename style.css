@@ -124,6 +124,13 @@ main dl div{
     width:80%;
 }
 
+main a:link{
+    color:var(--linkColor)
+}
+
+main a:visited{
+    color: var(--visitedLinkColor);
+}
 
 
 /********************************
