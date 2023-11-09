@@ -13,6 +13,7 @@
     --footerBgColor:black;
     --footerTxtColor: white;
     --visitedLinkColor: rgb(230,12,83);
+    --headColor: rgb(230,12,83);
     --linkColor: white;
     --flagColor: rgb(218, 125, 12);
     --font-body-family:"roboto Condensed", sans-serif;
@@ -27,6 +28,13 @@ html{
     background-image: url("images/bg.png");
 }
 
+body{/*per mettere il footer in fondo alla pagina*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;/*100% del dispositivo*/
+}
+
+
 /********************************
 *HEADER
 ********************************/
@@ -38,6 +46,20 @@ header{
     padding: 1em;
 }
 
+/*sostituisco il testo con una immagine*/
+header h1{
+    text-indent:-999em;
+    background-image: url(./images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size:4em;
+    line-height: 1.5em;
+}
+
+/********************************
+*NAV
+********************************/
 nav{
     background-color: var(--headerBgColor);
     color: var(--headerTxtColor);
@@ -89,7 +111,9 @@ main{
 
 main h2{
     text-align: center;
-    padding: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    font-size: 2em;
 }
 
 main.colonne{
@@ -105,6 +129,13 @@ main.colonne{
 main.colonne div dt, main.colonne div dd{
     display: inline;
     text-transform: uppercase;
+}
+
+.soldOut{
+    background-image: url(./images/soldout.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 dd.città{
@@ -146,6 +177,47 @@ footer{
 }
 
 /********************************
+*COMPONENTI
+********************************/
+#componenti{
+    margin:auto;
+    width:95%;
+    max-width: 1024px;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+#componenti>dt{
+    background-color: var(--headColor);
+    color: var(--txtColor);
+    border:1px solid black;
+    padding:0.5em;
+    font-size: 1.1em;
+}
+
+#componenti>dd{
+    background-color: var(--bgColor);
+    border: 1px solid black;
+    border-top: none;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+#componenti>dd img{
+    width:15%;
+    float: left;
+    margin-right: 1em;
+}
+
+.componente dt{
+    float: left;
+    font-weight:bold;
+}
+
+
+
+
+/********************************
 *TABELLA
 ********************************/
 table{
@@ -172,8 +244,15 @@ tr:nth-child(even){
     background-color:rgba(218, 125, 12, 0.9);
 }
 
-
-/*fa tutta la data in grassetto non solo il giorno */
-tbody tr th time span{
+thead th{
     font-weight: bold;
 }
+
+th{
+    font-weight: normal;
+}
+
+th time span{
+    font-weight: bold;
+}
+
