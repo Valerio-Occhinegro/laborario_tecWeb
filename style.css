@@ -33,6 +33,10 @@ body{/*per mettere il footer in fondo alla pagina*/
     flex-direction: column;
     min-height: 100vh;/*100% del dispositivo*/
 }
+.navigationHelp{
+    position:absolute;
+    text-indent:-999em;
+}
 
 
 /********************************
