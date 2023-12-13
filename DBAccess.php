@@ -15,24 +15,24 @@
                 self::USERNAME,
                 self::PASSWORD
             );
-            //return mysqli_connect_errno()=0;
-            if(mysqli_connect_errno()){ //se la connessione fallisce
+            return mysqli_connect_errno()==0;
+            /*if(mysqli_connect_errno()){ //se la connessione fallisce
                 return false;  //ritorna false
             }
             else{
                 return true; //altrimenti ritorna true
-            }
+            }*/
         }
 
         public function getListaAlbum(){
             $query = "SELECT ID, Titolo, Copertina, idCSS FROM Album ORDER BY DataPubblicazione DESC";
-            $queryResult = mysqli_query($this -> connection, $query) or die("errore in dbacces" .mysqli_error($this->connection));
+            $queryResult = mysqli_query($this -> connection, $query) or die("errore in DBacces" .mysqli_error($this->connection));
             if(mysqli_num_rows($queryResult)!=0){
                 $result=array();
                 while($row = mysqli_fetch_assoc($queryResult)){
-                    $result[]=$row;
+                    $result[]=$row; //append
                 }
-                $queryResult ->free();
+                $queryResult ->free(); //liberiamo la memoria
                 return $result;
             }else{
                 return null;
